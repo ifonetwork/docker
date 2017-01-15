@@ -1,3 +1,4 @@
 docker-compose -f nginx-php5-oldmongo.example.yml up --build
 
+docker ps
 docker exec -ti 2ab3016b6e08 bash -l

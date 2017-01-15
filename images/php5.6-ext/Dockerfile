@@ -8,4 +8,5 @@ RUN apt-get update && apt-get install -y  libmemcached-dev zlib1g-dev  libssl-de
 # Install programs
 RUN apt-get update && \
     apt-get install curl nano  mc htop nano vim graphviz git --no-install-recommends -y  && \
-    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer	
+    curl -sS https://getcomposer.org/installer | php -- --install-dir=/usr/local/bin --filename=composer
+COPY docker-php.ini /usr/local/etc/php/conf.d/
