@@ -1,0 +1,41 @@
+version: "2.0"
+services:
+  nginx:
+    image: nginx:stable
+    ports:
+      - 8080:80
+    depends_on:
+      - php
+    volumes:
+      - ./nginx-html:/usr/share/nginx/html
+      - ./nginx/default.conf:/etc/nginx/conf.d/default.conf
+#  php:
+#    image: 7.0-fpm
+#    build: ./images/php7-exts
+#    volumes:
+#      - ./nginx-html:/usr/share/nginx/html
+  php:
+    image: 5.6-fpm
+    build: ./images/php5.6-ext
+    volumes:
+      - ./nginx-html:/usr/share/nginx/html
+
+  mysql:
+    image: mysql:5.7
+    ports:
+      - 3306:3306
+    volumes:
+      - ./mysqldata:/var/lib/mysql
+    restart: always
+    environment:
+       MYSQL_ROOT_PASSWORD: root
+       MYSQL_DATABASE: docker
+       MYSQL_USER: docker
+       MYSQL_PASSWORD: docker
+ 
+  mongo:  
+    image: mongo:3.0.4
+    ports:
+      - 27017:27017
+    volumes:
+      - ./mongodata:/var/lib/mongodb
