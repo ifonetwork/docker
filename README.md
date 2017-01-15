@@ -1,8 +1,8 @@
-# docker
-docker configuration for projects
+# Docker
+Docker configuration for projects
 
 Contains 
-NGINX +  PHP 5.6- FPM +  MYSQL + MONGODB
+NGINX +  PHP-5.6-FPM +  MYSQL + MONGODB
 
 Install Docker.
 
