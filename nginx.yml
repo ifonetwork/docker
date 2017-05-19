@@ -1,0 +1,11 @@
+version: "2.0"
+services:
+  nginx:
+    image: nginx:stable
+    ports:
+      - 80:80
+    volumes:
+      - ./nginx:/usr/share/nginx/html
+      - ./nginx/nginx_proxy.conf:/etc/nginx/conf.d/default.conf
+      - ./ssl/server101.mycloud.crt:/etc/nginx/certificate_bundled.crt
+      - ./ssl/server101.mycloud.key:/etc/nginx/privatekey.key

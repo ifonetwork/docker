@@ -15,8 +15,8 @@ services:
 #    volumes:
 #      - ./nginx-html:/usr/share/nginx/html
   php:
-    image: 5.6-fpm
-    build: ./images/php5.6-ext
+    image: 7.0-fpm
+    build: ./images/php7-exts
     volumes:
       - ../dev/tracker/public:/usr/share/nginx/html
 
